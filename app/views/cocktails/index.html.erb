@@ -1,0 +1,25 @@
+<h1>Fancy cocktails!</h1>
+<div class="container">
+  <% @cocktails.each do |cocktail| %>
+    <div class="card" style="width: 18rem;">
+      <img src="https://tse2.mm.bing.net/th?id=OIP._Atgb9iESGu-D9XCWy6itwHaLH&pid=Api" class="card-img-top" alt="...">
+      <div class="card-body">
+          <h5 class="card-title"><%= link_to cocktail.name, cocktail_path(cocktail) %></h5>
+          <% cocktail.ingredients.each do |ingredient|%>
+            <p class="card-text">
+              <ul>
+                <li><%= ingredient.name %></li>
+              </ul>
+            </p>
+          <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+
+
+<%= link_to "New", new_cocktail_path %>
