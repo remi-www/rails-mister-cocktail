@@ -2,25 +2,22 @@
 <div class="card-product">
   <%= cl_image_tag(@cocktail.photo.key,width: 400, height: 300, crop: :fill) %>
   <h1><%= @cocktail.name.capitalize %></h1>
-  <%= @ingredients %>
-  <h3></h3>
-
-      <div class="card-product-infos">
-        <h2>Ingredients:</h2>
-        <div class="product-list">
-          <% @cocktail.doses.each do |dose|%>
-            <ul>
-              <li>
-                <%= dose.description %>
-                <strong><%= dose.ingredient.name.capitalize%></strong>
-                <%= link_to dose_path(dose), method: :delete, data: {confirm: "Are you sure ?"} do %>
-                  <i class="far fa-trash-alt"></i>
-              </li>
-            </ul>
-          <% end %>
+  <h2>Ingredients:</h2>
+  <div class="list">
+      <% @cocktail.doses.each do |dose|%>
+        <div class="card-product-infos">
+          <ul>
+            <li>
+              <%= dose.description %>
+              <strong><%= dose.ingredient.name.capitalize%></strong>
+              <%= link_to dose_path(dose), method: :delete, data: {confirm: "Are you sure ?"} do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </li>
+          </ul>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+  </div>
 </div>
 
 <%= link_to "Back to Cocktails", cocktails_path %>
