@@ -1,21 +1,33 @@
-<h1>Fancy cocktails!</h1>
-<div class="container">
-  <% @cocktails.each do |cocktail| %>
-    <div class="card" style="width: 18rem;">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <%= link_to cocktail.name, cocktail_path(cocktail) %>
-      </div>
-      <% cocktail.ingredients.each do |ingredient|%>
-        <ul>
-          <li><%= ingredient.name %></li>
-        </ul>
-      <% end %>
-  <% end %>
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>Hardcore cocktails</h1>
+    <p>Make you own cocktails, and do not forget to drink them all!</p>
+  </div>
 </div>
 
+<div class="container">
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://tse2.mm.bing.net/th?id=OIP.t3SqluFEbIRzOj2550ruaQHaE7&pid=Api)">
+        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "New", new_cocktail_path, class: "btn btn-ghost"%>
+</div>
 
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+  </div>
+</div>
 
-
-
-
-<%= link_to "New", new_cocktail_path %>
