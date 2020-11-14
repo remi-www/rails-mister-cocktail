@@ -3,6 +3,9 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   margin-bottom: 20px;
+    a {
+        text-decoration: none;
+    }
 }
 
 // Smallest device
@@ -55,7 +58,6 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
     a {
-        text-decoration: none;
         color: white;
     }
 }
